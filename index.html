@@ -90,9 +90,10 @@
       gap: 0.5rem;
     }
     .logo-image {
-      width: 84px;
-      height: 84px;
+      width: 100px;
+      height: 100px;
       object-fit: contain;
+      background-color: var(--light-bg);
     }
     .logo-text {
       font-weight: 700;
@@ -538,15 +539,111 @@
       fill: var(--green-deep);
     }
     .footer-logo {
-      width: 52px;
-      height: 52px;
+      width: 64px;
+      height: 64px;
       object-fit: contain;
+      background-color: var(--light-bg);
     }
     .footer-brand span {
       text-transform: uppercase;
       letter-spacing: 0.16em;
       font-size: 0.72rem;
       color: var(--green-main);
+    }
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    .fade-in-up {
+      animation: fadeInUp 0.3s ease-out forwards;
+    }
+    .fade-in {
+      animation: fadeIn 0.4s ease-out forwards;
+    }
+    .scale-in {
+      animation: scaleIn 0.3s ease-out forwards;
+    }
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    }
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Enhanced hover effects */
+    .testimonial {
+      transition: transform 0.2s ease, box-shadow 0.2s ease, z-index 0.2s ease;
+      position: relative;
+      z-index: 1;
+    }
+    .testimonial:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+      z-index: 10;
+    }
+    .hero-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .hero-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(12, 90, 52, 0.15);
+    }
+    .subtle-box {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .subtle-box:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+    .about-figure {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .about-figure:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    }
+    .profile-figure {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .profile-figure:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    }
+    /* Logo animation */
+    .logo-image,
+    .footer-logo {
+      transition: transform 0.2s ease;
+    }
+    .logo-image:hover,
+    .footer-logo:hover {
+      transform: scale(1.05);
     }
   </style>
 </head>
@@ -609,7 +706,7 @@
             <a href="#consultation" class="btn btn-primary">
               Запази безплатна 1:1 консултация
             </a>
-            <a href="#about" class="btn btn-ghost"> Научи повече за мен </a>
+            <a href="#who-am-i" class="btn btn-ghost"> Научи повече за мен </a>
           </div>
         </div>
         <aside class="hero-card">
@@ -623,12 +720,11 @@
         </aside>
       </div>
     </section>
-    <section class="profile-gallery container" aria-label="Галерия">
+    <section id="who-am-i" class="profile-gallery container" aria-label="Галерия">
       <h2>Кой съм аз</h2>
       <div class="profile-feature">
         <figure class="profile-figure">
           <img src="images/Screenshot 2025-12-10 110909.png" alt="Практика и портрет" />
-          <figcaption style="margin-top:0.45rem; font-size:0.9rem; color:#4a5a52;">Практика в студиото</figcaption>
         </figure>
         <div class="profile-text">
           <h3>Кратко представяне</h3>
@@ -653,7 +749,6 @@
           </p>
           <figure class="about-figure">
             <img src="images/69Photos-8486.jpg" alt="Спокойна поза и фокус" />
-            <figcaption>Спокойна поза и фокус</figcaption>
           </figure>
         </div>
         <aside class="subtle-box">
@@ -712,86 +807,82 @@
             <div class="testimonial-head">
               <img src="images/zlati.jpg" alt="Клиент" class="testimonial-avatar" />
               <div>
-                <div class="testimonial-name">[Име на клиент]</div>
-                <div class="testimonial-meta">[Град]</div>
+                <div class="testimonial-name">Злати</div>
+                <div class="testimonial-meta">София</div>
               </div>
             </div>
             <p class="testimonial-quote">
-              „Много различно преживяване! Харесва ми съчетанието на физическа активност с духовна практика. Ще продължа да посещавам сесиите!“
+              „Много различно преживяване! Харесва ми съчетанието на физическа активност с духовна практика. Ще продължа да посещавам сесиите!"
             </p>
           </article>
           <article class="testimonial">
             <div class="testimonial-head">
-              <img src="images/nadeto.jpg" alt="Клиент" class="testimonial-avatar" />
+              <img src="images/Nadeto.jpg" alt="Клиент" class="testimonial-avatar" />
               <div>
-                <div class="testimonial-name">[Име на клиент]</div>
-                <div class="testimonial-meta">[Град или „Онлайн студент“]</div>
+                <div class="testimonial-name">Надежда</div>
+                <div class="testimonial-meta">София</div>
               </div>
             </div>
             <p class="testimonial-quote">
-              „Практиката със Стоян беше изключително приятна и полезна – идеален баланс между физическо и ментално упражнение. След практиката ми даде насоки кои асани да изпълнявам, за да работя срещу болките в тялото, които имам. Благодаря!“
+              „Практиката със Стоян беше изключително приятна и полезна – идеален баланс между физическо и ментално упражнение. След практиката ми даде насоки кои асани да изпълнявам, за да работя срещу болките в тялото, които имам. Благодаря!"
             </p>
           </article>
           <article class="testimonial">
             <div class="testimonial-head">
               <img src="images/chris.jpg" alt="Клиент" class="testimonial-avatar" />
               <div>
-                <div class="testimonial-name">[Име на клиент]</div>
-                <div class="testimonial-meta">[Професия или „Частен 1:1 ученик“]</div>
+                <div class="testimonial-name">Крис</div>
+                <div class="testimonial-meta">София</div>
               </div>
             </div>
             <p class="testimonial-quote">
-              „Практикувам йога от известно време, но съм благодарен, че Стоян ме изведе на следващото ниво като практикуващ. Той е много внимателен и ми помогна да изградя по-голямо доверие в тялото си!“
+              „Практикувам йога от известно време, но съм благодарен, че Стоян ме изведе на следващото ниво като практикуващ. Той е много внимателен и ми помогна да изградя по-голямо доверие в тялото си!"
             </p>
           </article>
           <article class="testimonial">
             <div class="testimonial-head">
               <img src="images/george.jpg" alt="Клиент" class="testimonial-avatar" />
               <div>
-                <div class="testimonial-name">[Име на клиент]</div>
-                <div class="testimonial-meta">[Град или „Онлайн студент“]</div>
+                <div class="testimonial-name">Георги</div>
+                <div class="testimonial-meta">Германия</div>
               </div>
             </div>
             <p class="testimonial-quote">
-              „Страдах от болка в областта на гърдите и гърба поради възпаление на нерв, и честно казано, влязох в курса малко скептично, тъй като бях опитал всичко досега, но нищо не ми беше помогнало дългосрочно. Инструкторът на курса беше изключително компетентен, а практиките, които правехме заедно, бяха специално подбрани за моя индивидуален проблем — това беше първото нещо, което ми направи силно впечатление. Не съм се чувствал толкова облекчен и пълен с енергия през последната година и половина.“
+              „Страдах от болка в областта на гърдите и гърба поради възпаление на нерв, и честно казано, влязох в курса малко скептично, тъй като бях опитал всичко досега, но нищо не ми беше помогнало дългосрочно. Инструкторът на курса беше изключително компетентен, а практиките, които правехме заедно, бяха специално подбрани за моя индивидуален проблем — това беше първото нещо, което ми направи силно впечатление. Не съм се чувствал толкова облекчен и пълен с енергия през последната година и половина."
             </p>
           </article>
           <article class="testimonial">
             <div class="testimonial-head">
-              <img src="images/petar.jpg" alt="Клиент" class="testimonial-avatar" />
+              <img src="images/Petar.jpg" alt="Клиент" class="testimonial-avatar" />
               <div>
-                <div class="testimonial-name">[Име на клиент]</div>
-                <div class="testimonial-meta">[Град или „Онлайн студент“]</div>
+                <div class="testimonial-name">Петър</div>
+                <div class="testimonial-meta">Село Бъта</div>
               </div>
             </div>
             <p class="testimonial-quote">
-              „След днешните упражнения усещам по-малко напрежение в кръста. Мисля, че най-много ми помогнаха за това упражненията с разтягане. Смятам, че в следващите сесии които ще проведем ще се почувствам дори още по-добре физически. Очаквам с нетърпение следващия клас!“
+              „След днешните упражнения усещам по-малко напрежение в кръста. Мисля, че най-много ми помогнаха за това упражненията с разтягане. Смятам, че в следващите сесии които ще проведем ще се почувствам дори още по-добре физически. Очаквам с нетърпение следващия клас!"
             </p>
           </article>
           <article class="testimonial">
             <div class="testimonial-head">
               <img src="images/petya.jpg" alt="Клиент" class="testimonial-avatar" />
               <div>
-                <div class="testimonial-name">[Име на клиент]</div>
-                <div class="testimonial-meta">[Град или „Онлайн студент“]</div>
+                <div class="testimonial-name">Петя</div>
+                <div class="testimonial-meta">София</div>
               </div>
             </div>
             <p class="testimonial-quote">
-              „Днес беше много приятно! Чувствах се добре раздвижена, много ми хареса накрая с дишането. Също така как обясняваш ми хареса много, че обясняваш йогата в по-дълбокия ѝ смисъл.“
+              „Днес беше много приятно! Чувствах се добре раздвижена, много ми хареса накрая с дишането. Също така как обясняваш ми хареса много, че обясняваш йогата в по-дълбокия ѝ смисъл."
             </p>
           </article>
         </div>
         <figure class="about-figure" style="margin-top:1.4rem;">
-          <img src="images/IMG-497794a720eda0a37d38637472cb8662-V.jpg" alt="Работа с клиент – мека мобилност" />
-          <figcaption>Работа с клиент – мека мобилност</figcaption>
-        </figure>
-        <figure class="about-figure" style="margin-top:1rem;">
           <img src="images/vlado.jpg" alt="Работа с клиент – Vlado" />
           <figcaption>Работа с клиент – Vlado</figcaption>
         </figure>
-        <p class="small-note" style="margin-top: 1.2rem;">
-          Ще заменя тези примерни текстове с истински думи от клиенти.
-        </p>
+        <figure class="about-figure" style="margin-top:1rem;">
+          <img src="images/Vlado2.jpg" alt="Работа с клиент – Vlado" />
+        </figure>
       </div>
     </section>
     <section id="contact">
@@ -946,6 +1037,47 @@
       });
     });
   </script>
+  <script>
+    // Scroll-triggered animations
+    document.addEventListener("DOMContentLoaded", () => {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, observerOptions);
+
+      // Add animation classes to elements
+      const animateElements = document.querySelectorAll(
+        "section, .testimonial, .hero-card, .subtle-box, .about-figure, .profile-figure"
+      );
+      
+      animateElements.forEach((el, index) => {
+        el.classList.add("animate-on-scroll");
+        el.style.transitionDelay = `${index * 0.05}s`;
+        observer.observe(el);
+      });
+
+      // Initial fade-in for hero content
+      const heroContent = document.querySelector(".hero-grid > div");
+      if (heroContent) {
+        heroContent.classList.add("fade-in-up");
+      }
+
+      const heroCard = document.querySelector(".hero-card");
+      if (heroCard) {
+        heroCard.classList.add("scale-in");
+        heroCard.style.animationDelay = "0.15s";
+      }
+    });
+  </script>
 </body>
 </html>
+
 
