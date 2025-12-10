@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <title>Naga Yogi – персонална йога програма | NĀGA YOGA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Naga Yogi – персонална йога програма с индивидуални практики, медитации и ежеседмична видео среща. Лична пътека за дълбока промяна."
+  />
+  <style>
+    :root {
+      --green-main: #0c5a34;
+      --green-deep: #17402a;
+      --sage: #e5f0ea;
+      --light-bg: #faf8f4;
+      --accent-gold: #c2a167;
+      --text-main: #1d2520;
+      --border-soft: #d8e5dc;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background-color: var(--light-bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      scroll-behavior: smooth;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    section {
+      padding: 4rem 0;
+    }
+    h1,
+    h2,
+    h3 {
+      color: var(--green-deep);
+      letter-spacing: 0.04em;
+    }
+    h1 {
+      font-size: clamp(2.1rem, 3.6vw, 2.7rem);
+      margin-bottom: 0.75rem;
+    }
+    h2 {
+      font-size: clamp(1.7rem, 3vw, 2.1rem);
+      margin-bottom: 1.5rem;
+    }
+    h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.6rem;
+      text-transform: uppercase;
+    }
+    p {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+    ul {
+      margin-left: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    ul li {
+      margin-bottom: 0.4rem;
+    }
+    /* Header / nav */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background-color: rgba(250, 248, 244, 0.96);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+    }
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .logo-image {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      background-color: var(--light-bg);
+    }
+    .logo-text {
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      color: var(--green-main);
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+    }
+    .nav-links a {
+      position: relative;
+      padding-bottom: 0.2rem;
+    }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background-color: var(--accent-gold);
+      transition: width 0.2s ease;
+    }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    .nav-toggle {
+      display: none;
+      border: none;
+      background: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+      color: var(--green-deep);
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        inset: 56px 0 auto 0;
+        background-color: var(--light-bg);
+        border-bottom: 1px solid var(--border-soft);
+        flex-direction: column;
+        padding: 0.75rem 1.5rem 1.25rem;
+        display: none;
+      }
+      .nav-links.show {
+        display: flex;
+      }
+      .nav-toggle {
+        display: block;
+      }
+    }
+    /* Buttons */
+    .btn-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.75rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.6rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background-color 0.18s ease, color 0.18s ease,
+        box-shadow 0.18s ease, border-color 0.18s ease, transform 0.1s ease;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background-color: var(--green-main);
+      color: #ffffff;
+      box-shadow: 0 10px 20px rgba(12, 90, 52, 0.18);
+    }
+    .btn-primary:hover {
+      background-color: #084326;
+      box-shadow: 0 14px 26px rgba(12, 90, 52, 0.22);
+      transform: translateY(-1px);
+    }
+    .btn-ghost {
+      background-color: transparent;
+      color: var(--green-main);
+      border-color: var(--green-main);
+    }
+    .btn-ghost:hover {
+      background-color: #e8f2ed;
+    }
+    /* Layout helpers */
+    .hero {
+      padding: 3.5rem 0 3.5rem;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+    .hero-kicker {
+      font-size: 0.85rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 0.5rem;
+    }
+    .hero-sub {
+      font-size: 1.02rem;
+      max-width: 36rem;
+    }
+    .hero-highlight {
+      font-weight: 600;
+      color: var(--green-main);
+    }
+    .hero-card {
+      background-color: var(--sage);
+      border-radius: 1.3rem;
+      padding: 1.5rem 1.5rem 1.7rem;
+      border: 1px solid var(--border-soft);
+      font-size: 0.95rem;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 2.5rem;
+      align-items: flex-start;
+    }
+    @media (max-width: 900px) {
+      .two-col {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+    .subtle-box {
+      background-color: var(--sage);
+      border-radius: 1.1rem;
+      padding: 1.3rem 1.4rem;
+      border: 1px solid var(--border-soft);
+      font-size: 0.95rem;
+    }
+    .section-label {
+      font-size: 0.85rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 0.4rem;
+    }
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .pill {
+      font-size: 0.85rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      background-color: #ffffff;
+    }
+    .faq-list {
+      display: grid;
+      gap: 1rem;
+    }
+    .faq-item h3 {
+      text-transform: none;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+    .faq-item p {
+      margin-bottom: 0.3rem;
+      font-size: 0.96rem;
+    }
+    footer {
+      border-top: 1px solid var(--border-soft);
+      padding: 1.8rem 0 2.4rem;
+      font-size: 0.85rem;
+      color: #657067;
+      margin-top: 1rem;
+    }
+    .footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .footer-logo {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      background-color: var(--light-bg);
+    }
+    .footer-brand span {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.72rem;
+      color: var(--green-main);
+    }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XZD6BK7GDS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XZD6BK7GDS');
+  </script>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container nav">
+      <div class="logo-wrap">
+        <a href="index.html#home" class="logo-wrap">
+          <img
+            src="images/logo-naga-yoga.png"
+            alt="NĀGA YOGA logo"
+            class="logo-image"
+          />
+          <span class="logo-text">NĀGA YOGA</span>
+        </a>
+      </div>
+      <button
+        class="nav-toggle"
+        aria-label="Превключи навигацията"
+        onclick="document.querySelector('.nav-links').classList.toggle('show')"
+      >
+        ☰
+      </button>
+      <nav class="nav-links">
+        <a href="index.html#home">Начало</a>
+        <a href="index.html#about">За мен</a>
+        <a href="index.html#consultation">Безплатна 1:1 консултация</a>
+        <a href="index.html#testimonials">Отзиви</a>
+        <a href="index.html#contact">Контакт</a>
+        <a href="naga-yogi.html">Naga Yogi програма</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-kicker">Персонална йога програма</div>
+          <h1>Naga Yogi – личната ти пътека в йога</h1>
+          <p class="hero-sub">
+            Naga Yogi е програма за хора, които не искат просто тренировки, а дълбока, лична промяна на характера и връзката с живота.
+          </p>
+          <p class="hero-sub">
+            Не получаваш „общи видеа". Получаваш лична практика, създадена
+            специално за теб, и истинска подкрепа по пътя.
+          </p>
+          <figure style="margin: 2rem 0; border-radius: 0.9rem; overflow: hidden;">
+            <img src="images/me.jpg" alt="След Naga Yogi" style="width: 100%; max-height: 400px; object-fit: cover; display: block;" />
+          </figure>
+          <div class="btn-row">
+            <a href="index.html#consultation" class="btn btn-primary">
+              Запиши се за безплатна 1:1 консултация
+            </a>
+            <a href="#how-it-works" class="btn btn-ghost">
+              Как работи програмата
+            </a>
+          </div>
+        </div>
+        <aside class="hero-card">
+          <h3>За кого е Naga Yogi?</h3>
+          <ul>
+            <li>За хора с напрежение, тревожност или усещане за „прегаряне".</li>
+            <li>За сковани тела, болки в гърба, раменете, врата.</li>
+            <li>За хора, които искат да изградят устойчив навик за практика.</li>
+            <li>За тези, които усещат, че йога може да бъде нещо по-дълбоко от гимнастика.</li>
+          </ul>
+          <p style="font-size:0.86rem; margin-top:0.6rem;">
+            Ако се разпознаваш в поне едно от тези, Naga Yogi може да ти даде
+            ясна структура и подкрепа, вместо поредния хаотичен опит.
+          </p>
+        </aside>
+      </div>
+    </section>
+    <!-- WHAT IT IS -->
+    <section>
+      <div class="container two-col">
+        <div>
+          <div class="section-label">Какво е</div>
+          <h2>Не просто практика, а процес</h2>
+          <p>
+            В Naga Yogi не преследваме „перфектни" пози. Работим с реалния ти
+            ресурс – време, енергия, тяло, психика. Програмата комбинира
+            персонални видеа, медитации и ежеседмични разговори, за да не
+            си сам в процеса.
+          </p>
+          <p>
+            Всичко е адаптирано – от дължината на практиките, до
+            интензивността и фокуса: сила, мобилност, заземяване, дишане,
+            вътрешен простор. Това е твоята лична йога система.
+          </p>
+          <figure style="margin: 2rem 0; border-radius: 0.9rem; overflow: hidden;">
+            <img src="images/klient1.webp" alt="Клиент 1 след практика" style="width: 100%; height: auto; display: block;" />
+          </figure>
+          <div class="pill-list">
+            <span class="pill">Персонални видеа</span>
+            <span class="pill">Ежеседмична обратна връзка</span>
+            <span class="pill">Медитации и пранаяма</span>
+            <span class="pill">Реалистично темпо</span>
+          </div>
+        </div>
+        <aside class="subtle-box">
+          <h3>Какво включва Naga Yogi?</h3>
+          <ul>
+            <li>
+              🎥 <strong>Персонално видео</strong> с асани и пранаяма, заснето
+              специално за теб – според твоето тяло, цели и ниво.
+            </li>
+            <li>
+              🎧 <strong>Медитации и йога нидра</strong>, които
+              получаваш сутрин в деня на практиката, за да влезеш в правилно
+              състояние.
+            </li>
+            <li>
+              💬 <strong>Еженеделен 30-минутен видео разговор</strong>, в
+              който обсъждаме как се чувстваш, какво работи и какво да
+              променим.
+            </li>
+            <li>
+              📅 <strong>Индивидуален план</strong>, който се адаптира
+              всяка седмица според реалния ти прогрес и ресурс.
+            </li>
+          </ul>
+          <p class="small-note" style="font-size:0.86rem; margin-top:0.5rem;">
+            Цялата програма е създадена така, че да ти служи дългосрочно –
+            да можеш да продължиш да практикуваш осъзнато дори и без мен.
+          </p>
+        </aside>
+      </div>
+    </section>
+    <!-- HOW IT WORKS -->
+    <section id="how-it-works">
+      <div class="container">
+        <div class="section-label">Процес</div>
+        <h2>Как протича Naga Yogi</h2>
+        <div class="two-col">
+          <div>
+            <h3>1. Безплатна 1:1 консултация</h3>
+            <p>
+              Започваме с разговор, в който уточняваме как се чувстваш, какви
+              са реалните ти цели и колко практика можеш да поемеш
+              седмично. Няма натиск, няма „трябва" – търсим какво е истински
+              възможно за теб.
+            </p>
+            <h3>2. Личен план и първи видеа</h3>
+            <p>
+              След консултацията създавам първоначална структура за теб и
+              записвам персонално видео с практика, плюс подбрани медитации
+              и дихателни техники. Получаваш ясни инструкции как и кога да
+              ги използваш.
+            </p>
+            <h3>3. Седмичен ритъм</h3>
+            <p>
+              В избраните дни практикуваш със своето видео и материали. В деня
+              на практиката получаваш от мен напомняне/ресурс, който да даде посока за деня.
+            </p>
+            <figure style="margin: 2rem 0; border-radius: 0.9rem; overflow: hidden;">
+              <img src="images/client2.webp" alt="Клиент 2 след практика" style="width: 100%; height: auto; display: block;" />
+            </figure>
+          </div>
+          <aside class="subtle-box">
+            <h3>4. Еженеделен видео разговор</h3>
+            <p>
+              Веднъж седмично имаме 30-минутен видео call, в който:
+            </p>
+            <ul>
+              <li>обсъждаме как се чувства тялото ти;</li>
+              <li>разглеждаме как реагираш на практиката – физически и емоционално;</li>
+              <li>коригираме позите, дишането и фокуса;</li>
+              <li>уточняваме следващите стъпки.</li>
+            </ul>
+            <p>
+              Това не е просто „отчет". Това е пространство за честен разговор
+              и осъзнаване – къде си сега и накъде искаш да отидеш.
+            </p>
+            <h3>5. Надграждане и промяна</h3>
+            <p>
+              Всяка седмица планът се адаптира прогресивно към по-добри резултати, като се въвеждат техники за по-напреднали, съобразени с твоят прогрес.
+            </p>
+          </aside>
+        </div>
+        <div class="btn-row" style="margin-top:2.5rem;">
+          <a href="index.html#consultation" class="btn btn-primary">
+            Запиши се за безплатна 1:1 консултация
+          </a>
+          <a href="index.html#contact" class="btn btn-ghost">
+            Задай ми въпрос за програмата
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- PRICING / COMMITMENT -->
+    <section>
+      <div class="container two-col">
+        <div>
+          <div class="section-label">Ангажимент</div>
+          <h2>Колко време и енергия изисква?</h2>
+          <p>
+            Реалистично, Naga Yogi изисква от теб между 2 и 4 практики
+            седмично – според това, което договорим. По-важно от всичко е
+            да бъде изпълнимо, а не „перфектно".
+          </p>
+          <p>
+            Заедно решаваме какво темпо е устойчиво и смислено за теб, така че
+            да можеш да останеш в процеса, без да се пречупиш от вина, натиск
+            или свръхамбиция.
+          </p>
+        </div>
+        <aside class="subtle-box">
+          <h3>Цена на програмата</h3>
+          <p>
+            Цената на Naga Yogi се определя индивидуално след безплатната
+            1:1 консултация, в зависимост от:
+          </p>
+          <ul>
+            <li>колко практики седмично поемаш;</li>
+            <li>дали включваме допълнителни медитации и ресурси;</li>
+            <li>продължителността на ангажимента (1, 3 или повече месеца).</li>
+          </ul>
+          <p>
+            Така плащаш за реалния процес, който поемаш, а не за абстрактен
+            пакет, който не ти пасва.
+          </p>
+          <p style="font-size:0.86rem;">
+            Всичко това изясняваме по време на консултацията.
+          </p>
+        </aside>
+      </div>
+    </section>
+    <!-- Kundalini image after commitment section -->
+    <section style="padding: 2rem 0;">
+      <div class="container">
+        <figure style="margin: 0; border-radius: 0.9rem; overflow: hidden;">
+          <img src="images/kundalini.webp" alt="Kundalini практика" style="width: 100%; height: auto; display: block;" />
+        </figure>
+      </div>
+    </section>
+    <!-- FAQ -->
+    <section>
+      <div class="container">
+        <div class="section-label">Често задавани въпроси</div>
+        <h2>Често задавани въпроси</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3>Трябва ли да имам опит с йога?</h3>
+            <p>
+              Не. Програмата може да бъде изцяло адаптирана за начинаещи –
+              с по-бавни практики, повече обяснения и фокус върху основи,
+              дишане и безопасно движение.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Само онлайн ли е програмата?</h3>
+            <p>
+              Програмата може да бъде изцяло онлайн (чрез видеа и видео разговори).
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Какво става, ако пропусна практика или седмица?</h3>
+            <p>
+              Животът се случва и такива събития са често срещани. На срещите обсъждаме какво е било възможно за теб и коригираме плана. Фокусът е върху оптимална консистентност.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Колко време е добре да участвам в програмата?</h3>
+            <p>
+              Един месец е добър старт, но най-смислени промени се случват
+              в рамките на 3+ месеца. По време на консултацията ще обсъдим
+              какъв хоризонт е подходящ за теб.
+            </p>
+          </div>
+        </div>
+        <div class="btn-row" style="margin-top:2.2rem;">
+          <a href="index.html#consultation" class="btn btn-primary">
+            Започни с безплатна 1:1 консултация
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container footer-row">
+      <div class="footer-brand">
+        <img
+          src="images/logo-naga-yoga.png"
+          alt="NĀGA YOGA logo"
+          class="footer-logo"
+        />
+        <span>NĀGA YOGA</span>
+      </div>
+      <div>
+        NĀGA YOGA © 2025. Всички права запазени. Йога за истински хора, в човешко темпо.
+      </div>
+    </div>
+  </footer>
+  <script>
+    // mobile nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+      });
+    }
+  </script>
+</body>
+</html>
+
