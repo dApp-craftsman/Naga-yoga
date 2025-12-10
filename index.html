@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <title>NĀGA YOGA | Йога за истински хора</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="NĀGA YOGA – земна, реалистична йога за истински хора. Безплатна индивидуална консултация 1:1, онлайн и на живо."
+  />
+  <style>
+    :root {
+      --green-main: #0c5a34;
+      --green-deep: #17402a;
+      --sage: #e5f0ea;
+      --light-bg: #faf8f4;
+      --accent-gold: #c2a167;
+      --text-main: #1d2520;
+      --border-soft: #d8e5dc;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--light-bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      scroll-behavior: smooth;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    section {
+      padding: 4.5rem 0;
+    }
+    h1,
+    h2,
+    h3 {
+      color: var(--green-deep);
+      letter-spacing: 0.04em;
+    }
+    h1 {
+      font-size: clamp(2.3rem, 4vw, 3rem);
+      margin-bottom: 0.75rem;
+    }
+    h2 {
+      font-size: clamp(1.7rem, 3vw, 2.1rem);
+      margin-bottom: 1.5rem;
+    }
+    h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+    }
+    p {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background-color: rgba(250, 248, 244, 0.95);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+    }
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .logo-image {
+      width: 84px;
+      height: 84px;
+      object-fit: contain;
+    }
+    .logo-text {
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      color: var(--green-main);
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+    }
+    .nav-links a {
+      position: relative;
+      padding-bottom: 0.2rem;
+    }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background-color: var(--accent-gold);
+      transition: width 0.2s ease;
+    }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    .nav-toggle {
+      display: none;
+      border: none;
+      background: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+      color: var(--green-deep);
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        inset: 56px 0 auto 0;
+        background-color: var(--light-bg);
+        border-bottom: 1px solid var(--border-soft);
+        flex-direction: column;
+        padding: 0.75rem 1.5rem 1.25rem;
+        display: none;
+      }
+      .nav-links.show {
+        display: flex;
+      }
+      .nav-toggle {
+        display: block;
+      }
+    }
+    .btn-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.75rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.6rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, transform 0.1s ease;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background-color: var(--green-main);
+      color: #ffffff;
+      box-shadow: 0 10px 20px rgba(12, 90, 52, 0.18);
+    }
+    .btn-primary:hover {
+      background-color: #084326;
+      box-shadow: 0 14px 26px rgba(12, 90, 52, 0.22);
+      transform: translateY(-1px);
+    }
+    .btn-ghost {
+      background-color: transparent;
+      color: var(--green-main);
+      border-color: var(--green-main);
+    }
+    .btn-ghost:hover {
+      background-color: #e8f2ed;
+    }
+    .hero {
+      padding: 3.5rem 0 4.5rem;
+    }
+    .hero-video-only {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.2rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 18px 34px rgba(0, 0, 0, 0.16);
+      isolation: isolate;
+    }
+    .hero-video-only video {
+      width: 100%;
+      height: clamp(280px, 55vh, 520px);
+      object-fit: cover;
+      display: block;
+      filter: saturate(1.04);
+    }
+    .hero-video-only::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0.08) 45%, rgba(0, 0, 0, 0) 90%);
+      z-index: 1;
+      pointer-events: none;
+    }
+    .hero-video-only .hero-video-label {
+      position: absolute;
+      left: 1.4rem;
+      bottom: 1.2rem;
+      z-index: 2;
+      background: rgba(250, 248, 244, 0.9);
+      color: var(--green-deep);
+      padding: 0.55rem 0.85rem;
+      border-radius: 0.8rem;
+      font-size: 0.9rem;
+      border: 1px solid rgba(216, 229, 220, 0.9);
+      box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+    .hero-kicker {
+      font-size: 0.85rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 0.5rem;
+    }
+    .hero-slogan {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--green-deep);
+      margin-bottom: 0.6rem;
+    }
+    .hero-sub {
+      font-size: 1.05rem;
+      max-width: 34rem;
+    }
+    .hero-highlight {
+      font-weight: 600;
+      color: var(--green-main);
+    }
+    .hero-card {
+      background-color: var(--sage);
+      border-radius: 1.3rem;
+      padding: 1.5rem 1.5rem 1.7rem;
+      border: 1px solid var(--border-soft);
+    }
+    .hero-card h3 {
+      margin-bottom: 0.75rem;
+    }
+    .hero-mini-list {
+      font-size: 0.95rem;
+      margin-left: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    .hero-mini-list li {
+      margin-bottom: 0.3rem;
+    }
+    .hero-note {
+      font-size: 0.82rem;
+      color: #4a5a52;
+      margin-top: 0.4rem;
+    }
+    .profile-gallery h2 {
+      margin-bottom: 1rem;
+    }
+    .profile-feature {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: center;
+    }
+    .profile-figure {
+      background: var(--sage);
+      border: 1px solid var(--border-soft);
+      border-radius: 1rem;
+      padding: 0.7rem;
+    }
+    .profile-figure img {
+      width: 100%;
+      border-radius: 0.8rem;
+      object-fit: cover;
+    }
+    .profile-text {
+      background: #fff;
+      border: 1px solid var(--border-soft);
+      border-radius: 1rem;
+      padding: 1rem 1.1rem;
+      box-shadow: 0 12px 22px rgba(0, 0, 0, 0.05);
+    }
+    .profile-text h3 {
+      margin-bottom: 0.6rem;
+      text-transform: none;
+      letter-spacing: 0.01em;
+      font-size: 1.1rem;
+    }
+    @media (max-width: 900px) {
+      .profile-feature {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 2.5rem;
+      align-items: flex-start;
+    }
+    @media (max-width: 900px) {
+      .two-col {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+    .subtle-box {
+      background-color: var(--sage);
+      border-radius: 1.1rem;
+      padding: 1.3rem 1.4rem;
+      border: 1px solid var(--border-soft);
+      font-size: 0.95rem;
+    }
+    .about-figure {
+      margin: 1.4rem 0;
+      background: var(--sage);
+      border: 1px solid var(--border-soft);
+      border-radius: 1rem;
+      padding: 0.7rem;
+    }
+    .about-figure img {
+      width: 100%;
+      border-radius: 0.8rem;
+      object-fit: cover;
+    }
+    .about-figure figcaption {
+      margin-top: 0.4rem;
+      font-size: 0.9rem;
+      color: #4a5a52;
+    }
+    ul {
+      margin-left: 1.2rem;
+      margin-bottom: 0.25rem;
+    }
+    ul li {
+      margin-bottom: 0.35rem;
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    @media (max-width: 900px) {
+      .testimonials-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 640px) {
+      .testimonials-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+    .testimonial {
+      background-color: var(--sage);
+      border-radius: 1rem;
+      padding: 1.3rem 1.3rem 1.4rem;
+      border: 1px solid var(--border-soft);
+      font-size: 0.95rem;
+    }
+    .testimonial-head {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.6rem;
+    }
+    .testimonial-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--border-soft);
+    }
+    .testimonial-quote {
+      font-style: italic;
+      margin-bottom: 0.75rem;
+    }
+    .testimonial-name {
+      font-weight: 600;
+      color: var(--green-deep);
+      font-size: 0.9rem;
+    }
+    .testimonial-meta {
+      font-size: 0.8rem;
+      color: #5a6c63;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 2.5rem;
+      align-items: flex-start;
+    }
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+    .contact-list {
+      list-style: none;
+      margin: 0;
+    }
+    .contact-list li {
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .form-embed {
+      position: relative;
+      width: 100%;
+      padding: 0.5rem;
+      background: var(--sage);
+      border: 1px solid var(--border-soft);
+      border-radius: 1rem;
+    }
+    .form-embed iframe {
+      width: 100%;
+      min-height: 1100px;
+      border: 0;
+      border-radius: 0.7rem;
+      background: #fff;
+    }
+    .contact-label {
+      font-weight: 600;
+      color: var(--green-deep);
+    }
+    .contact-icon {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      fill: var(--green-deep);
+      opacity: 0.9;
+    }
+    .contact-form {
+      display: grid;
+      gap: 0.75rem;
+    }
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      font-size: 0.9rem;
+    }
+    .field label {
+      font-weight: 500;
+      color: var(--green-deep);
+    }
+    .field input,
+    .field textarea,
+    .field select {
+      padding: 0.6rem 0.7rem;
+      border-radius: 0.55rem;
+      border: 1px solid var(--border-soft);
+      background-color: #ffffff;
+      font-family: inherit;
+      font-size: 0.9rem;
+      resize: vertical;
+    }
+    .field textarea {
+      min-height: 110px;
+    }
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus {
+      outline: 2px solid var(--green-main);
+      outline-offset: 1px;
+      border-color: var(--green-main);
+    }
+    .small-note {
+      font-size: 0.8rem;
+      color: #5f6b63;
+    }
+    footer {
+      border-top: 1px solid var(--border-soft);
+      padding: 1.8rem 0 2.4rem;
+      font-size: 0.85rem;
+      color: #657067;
+    }
+    .footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .social-icons {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .social-icons a {
+      display: inline-flex;
+      width: 28px;
+      height: 28px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 1px solid var(--border-soft);
+      background: #fff;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+    }
+    .social-icons a:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+      border-color: var(--green-main);
+    }
+    .social-icons svg {
+      width: 15px;
+      height: 15px;
+      fill: var(--green-deep);
+    }
+    .footer-logo {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+    }
+    .footer-brand span {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.72rem;
+      color: var(--green-main);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo-wrap">
+        <img
+          src="images/logo-naga-yoga.png"
+          alt="Лого NĀGA YOGA"
+          class="logo-image"
+        />
+        <span class="logo-text">NĀGA YOGA</span>
+      </div>
+      <button
+        class="nav-toggle"
+        aria-label="Превключи навигацията"
+        onclick="document.querySelector('.nav-links').classList.toggle('show')"
+      >
+        ☰
+      </button>
+      <nav class="nav-links">
+        <a href="#home">Начало</a>
+        <a href="#about">За мен</a>
+        <a href="#consultation">1:1 Сесии</a>
+        <a href="#testimonials">Отзиви</a>
+        <a href="#contact">Контакт</a>
+        <a href="blog.html">Блог</a>
+      </nav>
+    </div>
+  </header>
+  <main id="home">
+    <section class="hero">
+      <div class="hero-video-only">
+        <video
+          src="images/20250612_182028.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="images/IMG_20251127_164805_868.jpg"
+        ></video>
+        <div class="hero-video-label">Видео практика</div>
+      </div>
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-kicker">Йога за истински хора</div>
+          <div class="hero-slogan">Промяната започва отвътре навън.</div>
+          <h1>NĀGA YOGA</h1>
+          <p class="hero-sub">
+            Ако търсиш не просто гимнастика или стречинг, а практика, която разклаща старите модели и връща връзката с истинското ти „аз“, NĀGA YOGA е твоето място.
+          </p>
+          <p class="hero-sub">
+            Няма значение кой си, какво работиш или откъде започваш. Очаква те работа с навиците, напрежението, раните, силата и потенциала, които вече са в теб.
+          </p>
+          <p class="hero-sub">
+            Онлайн или присъствено, всяка сесия се адаптира до това, къде <span class="hero-highlight">реално си днес</span>.
+          </p>
+          <div class="btn-row">
+            <a href="#consultation" class="btn btn-primary">
+              Запази безплатна 1:1 консултация
+            </a>
+            <a href="#about" class="btn btn-ghost"> Научи повече за мен </a>
+          </div>
+        </div>
+        <aside class="hero-card">
+          <h3>В какво работим заедно</h3>
+          <ul class="hero-mini-list">
+            <li>Стрес, напрежение и претоварена нервна система</li>
+            <li>Скованост от работа, седене и екрани</li>
+            <li>Постепенно изграждане на сила и подвижност</li>
+            <li>Създаване на реалистична лична практика</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+    <section class="profile-gallery container" aria-label="Галерия">
+      <h2>Кой съм аз</h2>
+      <div class="profile-feature">
+        <figure class="profile-figure">
+          <img src="images/Screenshot 2025-12-10 110909.png" alt="Практика и портрет" />
+          <figcaption style="margin-top:0.45rem; font-size:0.9rem; color:#4a5a52;">Практика в студиото</figcaption>
+        </figure>
+        <div class="profile-text">
+          <h3>Кратко представяне</h3>
+          <p>
+            Казвам се Стоян и съм преподавател по автентична класическа йога – такава, каквато се е практикувала от векове, с дълбок фокус върху тялото, ума и духа.
+          </p>
+          <p>
+            Пътуването ми до Индия през 2020 г. промени посоката на живота ми – от стремеж към външни постижения към дълбоко търсене на истина, вътрешен мир и освобождение.
+          </p>
+          <p>
+            Моята дхарма (мисия) е да споделям знания и практики, които водят до пълноценност, осъзнатост и истински смисъл в живота.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <div class="container two-col">
+        <div>
+          <h2>За NĀGA YOGA</h2>
+          <p>
+            NĀGA YOGA е вдъхновена от образа на змията – заземена, силна и мъдра. Както на̄гата, йога практиката не бърза: тя се навива, разгръща и се издига в собственото си време. Моят подход е да те водя към същия устойчив, интелигентен растеж, вместо да насилваш тялото си в форми, които не ти служат.
+          </p>
+          <figure class="about-figure">
+            <img src="images/69Photos-8486.jpg" alt="Спокойна поза и фокус" />
+            <figcaption>Спокойна поза и фокус</figcaption>
+          </figure>
+        </div>
+        <aside class="subtle-box">
+          <h3>Какво да очакваш</h3>
+          <ul>
+            <li>Практики според нивото на напредналост</li>
+            <li>Варианти за всички нива и тела</li>
+            <li>Фокус върху вътрешния свят: емоционален баланс, креативност, концентрация и спокойствие</li>
+            <li>Пространство за въпроси и разговор</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+    <section id="consultation">
+      <div class="container two-col">
+        <div>
+          <h2>Безплатна 1:1 консултация</h2>
+          <p>
+            Не си сигурен/на откъде да започнеш или каква практика ти трябва? Хайде да поговорим. Предлагам безплатна консултация 1:1, за да изясним твоите цели и да видим дали си пасваме.
+          </p>
+          <p>Това е <strong>20–30 минутен онлайн разговор</strong>, в който:</p>
+          <ul>
+            <li>Говорим за тялото ти, енергията и ежедневието</li>
+            <li>Уточняваме какво искаш от йога (физически, ментално, емоционално)</li>
+            <li>Обсъждаме травми, ограничения или притеснения</li>
+            <li>Чертаем реалистичен план: индивидуални сесии, групови класове или домашна практика</li>
+          </ul>
+          <p>
+          </p>
+        </div>
+        <aside class="subtle-box">
+          <h3>Заяви безплатната си сесия</h3>
+          <p>
+            Готов/а ли си да заявиш безплатната си сесия? Попълни кратка форма с данните си и ще се свържа с предложения за време.
+          </p>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSe270mYA9IgtHEJtZawHR8fPvJN8IN_ckxpi45KtLxRyLfdQA/viewform?usp=dialog"
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="margin-top: 0.4rem;"
+          >
+            Отвори формата
+          </a>
+        </aside>
+      </div>
+    </section>
+    <section id="testimonials">
+      <div class="container">
+        <h2>Какво казват учениците</h2>
+        <p>
+          Така звучи йога с мен, разказана от хората, които реално практикуват:
+        </p>
+        <div class="testimonials-grid">
+          <article class="testimonial">
+            <div class="testimonial-head">
+              <img src="images/zlati.jpg" alt="Клиент" class="testimonial-avatar" />
+              <div>
+                <div class="testimonial-name">[Име на клиент]</div>
+                <div class="testimonial-meta">[Град]</div>
+              </div>
+            </div>
+            <p class="testimonial-quote">
+              „Много различно преживяване! Харесва ми съчетанието на физическа активност с духовна практика. Ще продължа да посещавам сесиите!“
+            </p>
+          </article>
+          <article class="testimonial">
+            <div class="testimonial-head">
+              <img src="images/nadeto.jpg" alt="Клиент" class="testimonial-avatar" />
+              <div>
+                <div class="testimonial-name">[Име на клиент]</div>
+                <div class="testimonial-meta">[Град или „Онлайн студент“]</div>
+              </div>
+            </div>
+            <p class="testimonial-quote">
+              „Практиката със Стоян беше изключително приятна и полезна – идеален баланс между физическо и ментално упражнение. След практиката ми даде насоки кои асани да изпълнявам, за да работя срещу болките в тялото, които имам. Благодаря!“
+            </p>
+          </article>
+          <article class="testimonial">
+            <div class="testimonial-head">
+              <img src="images/chris.jpg" alt="Клиент" class="testimonial-avatar" />
+              <div>
+                <div class="testimonial-name">[Име на клиент]</div>
+                <div class="testimonial-meta">[Професия или „Частен 1:1 ученик“]</div>
+              </div>
+            </div>
+            <p class="testimonial-quote">
+              „Практикувам йога от известно време, но съм благодарен, че Стоян ме изведе на следващото ниво като практикуващ. Той е много внимателен и ми помогна да изградя по-голямо доверие в тялото си!“
+            </p>
+          </article>
+          <article class="testimonial">
+            <div class="testimonial-head">
+              <img src="images/george.jpg" alt="Клиент" class="testimonial-avatar" />
+              <div>
+                <div class="testimonial-name">[Име на клиент]</div>
+                <div class="testimonial-meta">[Град или „Онлайн студент“]</div>
+              </div>
+            </div>
+            <p class="testimonial-quote">
+              „Страдах от болка в областта на гърдите и гърба поради възпаление на нерв, и честно казано, влязох в курса малко скептично, тъй като бях опитал всичко досега, но нищо не ми беше помогнало дългосрочно. Инструкторът на курса беше изключително компетентен, а практиките, които правехме заедно, бяха специално подбрани за моя индивидуален проблем — това беше първото нещо, което ми направи силно впечатление. Не съм се чувствал толкова облекчен и пълен с енергия през последната година и половина.“
+            </p>
+          </article>
+          <article class="testimonial">
+            <div class="testimonial-head">
+              <img src="images/petar.jpg" alt="Клиент" class="testimonial-avatar" />
+              <div>
+                <div class="testimonial-name">[Име на клиент]</div>
+                <div class="testimonial-meta">[Град или „Онлайн студент“]</div>
+              </div>
+            </div>
+            <p class="testimonial-quote">
+              „След днешните упражнения усещам по-малко напрежение в кръста. Мисля, че най-много ми помогнаха за това упражненията с разтягане. Смятам, че в следващите сесии които ще проведем ще се почувствам дори още по-добре физически. Очаквам с нетърпение следващия клас!“
+            </p>
+          </article>
+          <article class="testimonial">
+            <div class="testimonial-head">
+              <img src="images/petya.jpg" alt="Клиент" class="testimonial-avatar" />
+              <div>
+                <div class="testimonial-name">[Име на клиент]</div>
+                <div class="testimonial-meta">[Град или „Онлайн студент“]</div>
+              </div>
+            </div>
+            <p class="testimonial-quote">
+              „Днес беше много приятно! Чувствах се добре раздвижена, много ми хареса накрая с дишането. Също така как обясняваш ми хареса много, че обясняваш йогата в по-дълбокия ѝ смисъл.“
+            </p>
+          </article>
+        </div>
+        <figure class="about-figure" style="margin-top:1.4rem;">
+          <img src="images/IMG-497794a720eda0a37d38637472cb8662-V.jpg" alt="Работа с клиент – мека мобилност" />
+          <figcaption>Работа с клиент – мека мобилност</figcaption>
+        </figure>
+        <figure class="about-figure" style="margin-top:1rem;">
+          <img src="images/vlado.jpg" alt="Работа с клиент – Vlado" />
+          <figcaption>Работа с клиент – Vlado</figcaption>
+        </figure>
+        <p class="small-note" style="margin-top: 1.2rem;">
+          Ще заменя тези примерни текстове с истински думи от клиенти.
+        </p>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="container contact-grid">
+        <div>
+          <h2>Контакт</h2>
+          <p>
+            Ако имаш въпроси за класове, цени или консултацията, пиши ми. Чета всяко съобщение лично.
+          </p>
+          <ul class="contact-list">
+            <li>
+              <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm0 2v.2l8 4.8 8-4.8V7H4zm0 2.7V17h16v-7.3l-7.4 4.4a2 2 0 0 1-2 0L4 9.7z"/>
+              </svg>
+              <span class="contact-label">Имейл:&nbsp;</span>
+              <a href="mailto:Stopalov111@gmail.com">Stopalov111@gmail.com</a>
+            </li>
+            <li>
+              <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4zm0 2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7zm5 3.5A4.5 4.5 0 1 1 7.5 13 4.5 4.5 0 0 1 12 8.5zm0 2A2.5 2.5 0 1 0 14.5 13 2.5 2.5 0 0 0 12 10.5zm4.75-4.4a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1z"/>
+              </svg>
+              <span class="contact-label">Instagram:&nbsp;</span>
+              <a
+                href="https://www.instagram.com/nagayoga.stoyantopalov/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                @nagayoga.stoyantopalov
+              </a>
+            </li>
+            <li>
+              <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2a7 7 0 0 1 7 7c0 4.2-3.38 8.37-6.23 11.02a1.06 1.06 0 0 1-1.54 0C8.38 17.37 5 13.2 5 9a7 7 0 0 1 7-7zm0 2a5 5 0 0 0-5 5c0 3.03 2.54 6.46 5 8.93 2.46-2.47 5-5.9 5-8.93a5 5 0 0 0-5-5zm0 2.75A2.25 2.25 0 1 1 9.75 9 2.25 2.25 0 0 1 12 6.75z"/>
+              </svg>
+              <span class="contact-label">Локация / часова зона:&nbsp;</span>
+              България (EET)
+            </li>
+          </ul>
+        </div>
+        <aside class="subtle-box">
+          <h3>Изпрати кратко съобщение</h3>
+          <p class="small-note">
+            Попълни и изпрати — ще се отвори имейл с данните, за да го изпратиш към Stopalov111@gmail.com.
+          </p>
+          <form class="contact-form" id="contact-form">
+            <div class="field">
+              <label for="name">Име</label>
+              <input id="name" type="text" placeholder="Твоето име" />
+            </div>
+            <div class="field">
+              <label for="email">Имейл</label>
+              <input
+                id="email"
+                type="email"
+                placeholder="твоят@имейл.bg"
+              />
+            </div>
+            <div class="field">
+              <label for="preference">Предпочитан контакт</label>
+              <select id="preference">
+                <option value="email">Имейл</option>
+                <option value="instagram">Instagram</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="message">Съобщение</label>
+              <textarea
+                id="message"
+                placeholder="С какво би искал/а подкрепа?"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              Изпрати съобщение
+            </button>
+          </form>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container footer-row">
+      <div class="footer-brand">
+        <img
+          src="images/logo-naga-yoga.png"
+          alt="Лого NĀGA YOGA"
+          class="footer-logo"
+        />
+        <span>NĀGA YOGA</span>
+      </div>
+      <div class="social-icons" aria-label="Социални мрежи">
+        <a href="https://www.instagram.com/nagayoga.stoyantopalov/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4zm0 2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7zm5 3.5A4.5 4.5 0 1 1 7.5 13 4.5 4.5 0 0 1 12 8.5zm0 2A2.5 2.5 0 1 0 14.5 13 2.5 2.5 0 0 0 12 10.5zm4.75-4.4a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1z"/>
+          </svg>
+        </a>
+        <a href="https://www.facebook.com/stoyan.topalov.121" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M13 10h2.5l.5-3H13V5.5c0-.9.3-1.5 1.6-1.5H16V1.2C15.4 1.1 14.2 1 13 1c-2.7 0-4.5 1.6-4.5 4.3V7H6v3h2.5v9h4.5z"/>
+          </svg>
+        </a>
+        <a href="https://www.tiktok.com/@nagayoga.stoyantopalov" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M15.6 5.1c.6.9 1.6 1.6 2.7 1.8v3.2c-1.2-.02-2.3-.36-3.3-.94l-.01 5.07c0 2.86-2.44 5.18-5.45 4.84A5.01 5.01 0 0 1 5 14.96c0-2.77 2.24-5.02 5.02-5.02.34 0 .67.03.99.1v3.18a2.03 2.03 0 0 0-1-.08 1.83 1.83 0 0 0-1.44 1.77c0 1.03.86 1.84 1.9 1.76.92-.07 1.64-.86 1.64-1.8l.02-10.8h3.37z"/>
+          </svg>
+        </a>
+      </div>
+      <div>
+        NĀGA YOGA © 2025. Всички права запазени. Йога за истински хора.
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const vid = document.querySelector(".hero-video-only video");
+      if (!vid) return;
+
+      const START_AT_SECONDS = 7;
+
+      const seek = () => {
+        vid.currentTime = START_AT_SECONDS;
+        vid.play();
+      };
+
+      vid.addEventListener("loadedmetadata", seek, { once: true });
+      vid.addEventListener("canplay", seek, { once: true });
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("contact-form");
+      if (!form) return;
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = document.getElementById("name")?.value?.trim() || "";
+        const email = document.getElementById("email")?.value?.trim() || "";
+        const pref = document.getElementById("preference")?.value || "";
+        const msg = document.getElementById("message")?.value?.trim() || "";
+
+        if (pref === "instagram") {
+          // Отваря Instagram профила в нов таб
+          window.open("https://www.instagram.com/nagayoga.stoyantopalov/", "_blank", "noopener,noreferrer");
+          form.reset();
+        } else {
+          // Отваря mailto за имейл
+          const subject = encodeURIComponent("Запитване от сайта NĀGA YOGA");
+          const body = encodeURIComponent(
+            `Име: ${name}\nИмейл: ${email}\nПредпочитан контакт: ${pref}\nСъобщение:\n${msg}`
+          );
+          window.location.href = `mailto:Stopalov111@gmail.com?subject=${subject}&body=${body}`;
+          form.reset();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
