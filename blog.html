@@ -82,11 +82,24 @@
       background: #fff;
       border: 1px solid var(--border-soft);
       border-radius: 1rem;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+      overflow: hidden;
+    }
+    .post-card-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+    .post-card-content {
       padding: 1rem 1.1rem 1.2rem;
       display: flex;
       flex-direction: column;
       gap: 0.55rem;
-      transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
     }
     .post-card:hover {
       transform: translateY(-2px);
@@ -215,41 +228,49 @@
         <h2>Последни публикации</h2>
         <div class="posts-grid">
           <article class="post-card">
-            <span class="post-tag">Йога философия</span>
-            <div class="post-title">Какво всъщност е йога?</div>
-            <p class="post-excerpt">
-              Класическото ѝ значение отвъд асаните и разтягането. Йога като наука за трансформация на ума и баланс.
-            </p>
-            <div class="post-meta">Време за четене: 6 мин</div>
-            <a class="btn" href="blog-kakvo-vsushtnost-e-yoga.html" aria-label="Прочети повече за какво е йога">Прочети</a>
+            <img src="images/blog images/3.jpeg" alt="Йога баланс - Бхагавад Гита" class="post-card-image" />
+            <div class="post-card-content">
+              <span class="post-tag">Йога философия</span>
+              <div class="post-title">Какво всъщност е йога?</div>
+              <p class="post-excerpt">
+                Класическото ѝ значение отвъд асаните и разтягането. Йога като наука за трансформация на ума и баланс.
+              </p>
+              <div class="post-meta">Време за четене: 6 мин</div>
+              <a class="btn" href="blog-kakvo-vsushtnost-e-yoga.html" aria-label="Прочети повече за какво е йога">Прочети</a>
+            </div>
           </article>
           <article class="post-card">
-            <span class="post-tag">Сила и мобилност</span>
-            <div class="post-title">Мини практика за рамена и горен гръб</div>
-            <p class="post-excerpt">
-              10-минутна последователност, която противодейства на седенето и екрана: рамена, лопатки, дишане.
-            </p>
-            <div class="post-meta">Време за четене: 4 мин</div>
-            <a class="btn" href="#" aria-label="Прочети повече за мини практика за рамена">Прочети</a>
+            <div class="post-card-content">
+              <span class="post-tag">Сила и мобилност</span>
+              <div class="post-title">Мини практика за рамена и горен гръб</div>
+              <p class="post-excerpt">
+                10-минутна последователност, която противодейства на седенето и екрана: рамена, лопатки, дишане.
+              </p>
+              <div class="post-meta">Време за четене: 4 мин</div>
+              <a class="btn" href="#" aria-label="Прочети повече за мини практика за рамена">Прочети</a>
+            </div>
           </article>
           <article class="post-card">
-            <span class="post-tag">Личен опит</span>
-            <div class="post-title">Как изглежда реалистична практика в натоварена седмица</div>
-            <p class="post-excerpt">
-              Примерен график с 2 кратки сесии и един по-дълъг блок през уикенда, плюс идеи за адаптация.
-            </p>
-            <div class="post-meta">Време за четене: 5 мин</div>
-            <a class="btn" href="#" aria-label="Прочети повече за реалистична практика">Прочети</a>
+            <div class="post-card-content">
+              <span class="post-tag">Личен опит</span>
+              <div class="post-title">Как изглежда реалистична практика в натоварена седмица</div>
+              <p class="post-excerpt">
+                Примерен график с 2 кратки сесии и един по-дълъг блок през уикенда, плюс идеи за адаптация.
+              </p>
+              <div class="post-meta">Време за четене: 5 мин</div>
+              <a class="btn" href="#" aria-label="Прочети повече за реалистична практика">Прочети</a>
+            </div>
           </article>
         </div>
 
         <div class="subscribe-box">
           <h3>Абонирай се</h3>
-          <p class="hero-meta">Остави имейл, за да получаваш нови статии и кратки практики. Формата е демонстрационна.</p>
-          <form class="subscribe-form" onsubmit="event.preventDefault()">
-            <input type="email" placeholder="tvoi@email.com" aria-label="Имейл" />
-            <button class="btn" type="submit">Абонирай ме</button>
+          <p class="hero-meta">Остави имейл, за да получаваш нови статии и кратки практики.</p>
+          <form class="subscribe-form" id="subscribe-form">
+            <input type="email" id="subscribe-email" placeholder="tvoi@email.com" aria-label="Имейл" required />
+            <button class="btn" type="submit" id="subscribe-btn">Абонирай ме</button>
           </form>
+          <div id="subscribe-message" style="margin-top: 1rem; display: none; font-size: 0.9rem;"></div>
         </div>
       </div>
     </section>
@@ -283,6 +304,76 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("subscribe-form");
+      const emailInput = document.getElementById("subscribe-email");
+      const submitBtn = document.getElementById("subscribe-btn");
+      const messageDiv = document.getElementById("subscribe-message");
+
+      if (!form) return;
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        
+        const email = emailInput.value.trim();
+        
+        if (!email || !email.includes("@")) {
+          showMessage("Моля, въведи валиден имейл адрес.", "error");
+          return;
+        }
+
+        // Показване на състояние на зареждане
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Изпращане...";
+        messageDiv.style.display = "none";
+
+        try {
+          // Използване на Web3Forms за изпращане на имейл
+          const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: JSON.stringify({
+              access_key: "148b3342-dd09-4ba6-9d61-24e5c9c8070d",
+              subject: "Нов абонат за блога NĀGA YOGA",
+              from_name: "NĀGA YOGA Блог",
+              email: email,
+              message: `Нов абонат се регистрира за блога:\n\nИмейл: ${email}\nДата: ${new Date().toLocaleString("bg-BG")}\n\nТози имейл трябва да бъде добавен към списъка с абонати.`,
+            }),
+          });
+
+          const data = await response.json();
+
+          if (data.success) {
+            showMessage("Благодарим! Успешно се абонира. Ще получаваш нови статии на този имейл.", "success");
+            form.reset();
+          } else {
+            throw new Error(data.message || "Грешка при изпращане");
+          }
+        } catch (error) {
+          console.error("Грешка при изпращане:", error);
+          showMessage("Възникна грешка. Моля, опитай отново по-късно или пиши директно на Stopalov111@gmail.com", "error");
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Абонирай ме";
+        }
+      });
+
+      function showMessage(text, type) {
+        messageDiv.textContent = text;
+        messageDiv.style.display = "block";
+        messageDiv.style.color = type === "success" ? "#0c5a34" : "#d32f2f";
+        messageDiv.style.padding = "0.75rem";
+        messageDiv.style.borderRadius = "0.5rem";
+        messageDiv.style.backgroundColor = type === "success" ? "#e5f0ea" : "#ffebee";
+        messageDiv.style.border = `1px solid ${type === "success" ? "#0c5a34" : "#d32f2f"}`;
+      }
+    });
+  </script>
 </body>
 </html>
 
