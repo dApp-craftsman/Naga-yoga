@@ -74,9 +74,10 @@
     .hero-meta { color: #4a5a52; font-size: 0.95rem; }
     .posts-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1.4rem;
       margin-top: 1rem;
+      align-items: start;
     }
     .post-card {
       background: #fff;
@@ -88,6 +89,7 @@
       gap: 0;
       transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
       overflow: hidden;
+      height: 100%;
     }
     .post-card-image {
       width: 100%;
@@ -100,6 +102,10 @@
       display: flex;
       flex-direction: column;
       gap: 0.55rem;
+      flex: 1;
+    }
+    .post-card-content .btn {
+      margin-top: auto;
     }
     .post-card:hover {
       transform: translateY(-2px);
@@ -218,7 +224,6 @@
           <p>
             Практични идеи за йога, дишане, възстановяване и движение в човешко темпо. Кратки, полезни материали за заети хора.
           </p>
-          <p class="hero-meta">Подмени примерните статии с реални публикации, линкове и изображения.</p>
         </div>
       </div>
     </section>
@@ -227,6 +232,18 @@
       <div class="container">
         <h2>Последни публикации</h2>
         <div class="posts-grid">
+          <article class="post-card">
+            <img src="images/blog images/1.jpg" alt="Петте основни пътя на йога: Карма, Бхакти, Джнана, Хатха и Ащанга йога" class="post-card-image" />
+            <div class="post-card-content">
+              <span class="post-tag">Йога философия</span>
+              <div class="post-title">Петте основни пътя на йога</div>
+              <p class="post-excerpt">
+                Подробно и академично представяне на петте основни пътя на йога: Карма, Бхакти, Джнана, Хатха и Ащанга йога.
+              </p>
+              <div class="post-meta">Време за четене: 12 мин</div>
+              <a class="btn" href="blog-pette-patya-na-yoga.html" aria-label="Прочети повече за петте пътя на йога">Прочети</a>
+            </div>
+          </article>
           <article class="post-card">
             <img src="images/blog images/3.jpeg" alt="Йога баланс - Бхагавад Гита" class="post-card-image" />
             <div class="post-card-content">
@@ -237,28 +254,6 @@
               </p>
               <div class="post-meta">Време за четене: 6 мин</div>
               <a class="btn" href="blog-kakvo-vsushtnost-e-yoga.html" aria-label="Прочети повече за какво е йога">Прочети</a>
-            </div>
-          </article>
-          <article class="post-card">
-            <div class="post-card-content">
-              <span class="post-tag">Сила и мобилност</span>
-              <div class="post-title">Мини практика за рамена и горен гръб</div>
-              <p class="post-excerpt">
-                10-минутна последователност, която противодейства на седенето и екрана: рамена, лопатки, дишане.
-              </p>
-              <div class="post-meta">Време за четене: 4 мин</div>
-              <a class="btn" href="#" aria-label="Прочети повече за мини практика за рамена">Прочети</a>
-            </div>
-          </article>
-          <article class="post-card">
-            <div class="post-card-content">
-              <span class="post-tag">Личен опит</span>
-              <div class="post-title">Как изглежда реалистична практика в натоварена седмица</div>
-              <p class="post-excerpt">
-                Примерен график с 2 кратки сесии и един по-дълъг блок през уикенда, плюс идеи за адаптация.
-              </p>
-              <div class="post-meta">Време за четене: 5 мин</div>
-              <a class="btn" href="#" aria-label="Прочети повече за реалистична практика">Прочети</a>
             </div>
           </article>
         </div>
@@ -300,7 +295,7 @@
         </a>
       </div>
       <div>
-        NĀGA YOGA © 2025. Всички права запазени. Блог и ресурси за човешко темпо.
+        NĀGA YOGA © 2025. Всички права запазени.
       </div>
     </div>
   </footer>
