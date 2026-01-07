@@ -317,125 +317,7 @@
       font-size: 0.72rem;
       color: var(--green-main);
     }
-    /* Google Translate - Styled */
-    .translate-wrapper {
-      display: inline-flex;
-      align-items: center;
-      margin-left: 1rem;
-      position: relative;
-      cursor: pointer;
-    }
-    .translate-wrapper::before {
-      content: "";
-      width: 20px;
-      height: 20px;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%230c5a34' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-      margin-right: 0.5rem;
-      transition: transform 0.2s ease;
-    }
-    .translate-wrapper:hover::before {
-      transform: scale(1.1);
-    }
-    #google_translate_element {
-      display: inline-block;
-      opacity: 0;
-      width: 0;
-      overflow: hidden;
-      transition: opacity 0.3s ease, width 0.3s ease;
-    }
-    .translate-wrapper:hover #google_translate_element {
-      opacity: 1;
-      width: auto;
-      overflow: visible;
-    }
-    #google_translate_element select {
-      padding: 0.5rem 2rem 0.5rem 0.75rem;
-      border-radius: 0.5rem;
-      border: 1px solid var(--border-soft);
-      background-color: #fff;
-      font-size: 0.85rem;
-      color: var(--text-main);
-      cursor: pointer;
-      transition: all 0.2s ease;
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%230c5a34' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 0.6rem center;
-      background-size: 0.75rem;
-      padding-right: 2.2rem;
-    }
-    #google_translate_element select:hover {
-      border-color: var(--green-main);
-      box-shadow: 0 2px 8px rgba(12, 90, 52, 0.1);
-    }
-    #google_translate_element select:focus {
-      outline: none;
-      border-color: var(--green-main);
-      box-shadow: 0 0 0 2px rgba(12, 90, 52, 0.1);
-    }
-    .goog-te-banner-frame {
-      display: none !important;
-    }
-    .goog-te-balloon-frame {
-      display: none !important;
-    }
-    .goog-te-gadget {
-      font-family: inherit !important;
-    }
-    .goog-te-gadget-simple {
-      background-color: transparent !important;
-      border: none !important;
-      padding: 0 !important;
-    }
-    .goog-te-gadget-icon {
-      display: none !important;
-    }
-    .goog-te-gadget-simple .goog-te-menu-value {
-      color: var(--text-main) !important;
-      display: none !important;
-    }
-    .goog-te-gadget-simple .goog-te-menu-value span {
-      color: var(--text-main) !important;
-      display: none !important;
-    }
-    body {
-      top: 0 !important;
-    }
-    @media (max-width: 768px) {
-      .translate-wrapper {
-        margin-left: 0;
-        margin-top: 0.75rem;
-        width: 100%;
-      }
-      .translate-wrapper::before {
-        margin-right: 0.75rem;
-      }
-      #google_translate_element {
-        opacity: 1 !important;
-        width: auto !important;
-        flex: 1;
-      }
-      #google_translate_element select {
-        width: 100%;
-        padding-right: 2.2rem;
-      }
-    }
   </style>
-  <!-- Google Translate -->
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'bg',
-        includedLanguages: 'en,es,fr,de,it,pt,ru,ar,zh-CN,ja,ko,hi',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false
-      }, 'google_translate_element');
-    }
-  </script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XZD6BK7GDS"></script>
   <script>
@@ -474,9 +356,6 @@
         <a href="index.html#contact">Контакт</a>
         <a href="blog.html">Блог</a>
         <a href="naga-yogi.html">Naga Yogi програма</a>
-        <div class="translate-wrapper">
-          <div id="google_translate_element"></div>
-        </div>
       </nav>
     </div>
   </header>
