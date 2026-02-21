@@ -74,19 +74,41 @@
     .hero-meta { color: #4a5a52; font-size: 0.95rem; }
     .posts-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1.4rem;
       margin-top: 1rem;
+      align-items: start;
     }
     .post-card {
       background: #fff;
       border: 1px solid var(--border-soft);
       border-radius: 1rem;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+      overflow: hidden;
+      height: 100%;
+    }
+    .post-card-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+    .post-card-image.asana-cover {
+      object-position: center 30%;
+    }
+    .post-card-content {
       padding: 1rem 1.1rem 1.2rem;
       display: flex;
       flex-direction: column;
       gap: 0.55rem;
-      transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+      flex: 1;
+    }
+    .post-card-content .btn {
+      margin-top: auto;
     }
     .post-card:hover {
       transform: translateY(-2px);
@@ -193,6 +215,7 @@
         <a href="index.html#testimonials">Отзиви</a>
         <a href="index.html#contact">Контакт</a>
         <a href="blog.html">Блог</a>
+        <a href="naga-yogi.html">Naga Yogi програма</a>
       </nav>
     </div>
   </header>
@@ -205,7 +228,7 @@
           <p>
             Практични идеи за йога, дишане, възстановяване и движение в човешко темпо. Кратки, полезни материали за заети хора.
           </p>
-          <p class="hero-meta">Подмени примерните статии с реални публикации, линкове и изображения.</p>
+          <p class="hero-meta">Остави имейл, за да получаваш нови статии и кратки практики.</p>
         </div>
       </div>
     </section>
@@ -215,49 +238,64 @@
         <h2>Последни публикации</h2>
         <div class="posts-grid">
           <article class="post-card">
-            <span class="post-tag">Пранаяма</span>
-            <div class="post-title">Пранаяма – изкуството да разшириш жизнената си енергия</div>
-            <p class="post-excerpt">
-              Пранаяма не е просто дихателна техника. Тя е древна йогийска практика за разширяване и управление на жизнената енергия – прана. Научете за четирите основни аспекта, петте тела в йога и как дишането влияе върху здравето и ума.
-            </p>
-            <div class="post-meta">Време за четене: 10 мин</div>
-            <a class="btn" href="blog-pranayama.html" aria-label="Прочети повече за пранаяма">Прочети</a>
+            <img src="images/pranayama1.jpg" alt="Пранаяма практика - йогийска дихателна техника за разширяване на прана и жизнената енергия" class="post-card-image" />
+            <div class="post-card-content">
+              <span class="post-tag">Пранаяма</span>
+              <div class="post-title">Пранаяма – изкуството да разшириш жизнената си енергия</div>
+              <p class="post-excerpt">
+                Пранаяма не е просто дихателна техника. Тя е древна йогийска практика за разширяване и управление на жизнената енергия – прана. Научете за четирите основни аспекта, петте тела в йога и как дишането влияе върху здравето и ума.
+              </p>
+              <div class="post-meta">Време за четене: 10 мин</div>
+              <a class="btn" href="blog-pranayama.html" aria-label="Прочети повече за пранаяма">Прочети</a>
+            </div>
           </article>
           <article class="post-card">
-            <span class="post-tag">Хатха Йога</span>
-            <div class="post-title">Хатха Йога като Научна Система за Активиране на Вътрешния Потенциал</div>
-            <p class="post-excerpt">
-              Хатха йога като пълноценна наука за трансформация на човешкото същество чрез хармонизиране на прана, тялото, ума и съзнанието. Научен подход към асани, пранаяма, мудри и бандхи.
-            </p>
-            <div class="post-meta">Време за четене: 8 мин</div>
-            <a class="btn" href="blog-hatha-yoga-nauchna-sistema.html" aria-label="Прочети повече за хатха йога">Прочети</a>
+            <img src="images/h1.jpg" alt="Хатха йога практика - асани и пранаяма за трансформация на тялото и ума" class="post-card-image" />
+            <div class="post-card-content">
+              <span class="post-tag">Хатха Йога</span>
+              <div class="post-title">Хатха Йога като Научна Система за Активиране на Вътрешния Потенциал</div>
+              <p class="post-excerpt">
+                Хатха йога като пълноценна наука за трансформация на човешкото същество чрез хармонизиране на прана, тялото, ума и съзнанието. Научен подход към асани, пранаяма, мудри и бандхи.
+              </p>
+              <div class="post-meta">Време за четене: 8 мин</div>
+              <a class="btn" href="blog-hatha-yoga-nauchna-sistema.html" aria-label="Прочети повече за хатха йога">Прочети</a>
+            </div>
           </article>
           <article class="post-card">
-            <span class="post-tag">Дишане</span>
-            <div class="post-title">3 дихателни цикъла за успокояване след работа</div>
-            <p class="post-excerpt">
-              Кратък протокол за нервната система, който можеш да правиш на бюро или на постелката. Нужни са 5 минути.
-            </p>
-            <div class="post-meta">Време за четене: 3 мин</div>
-            <a class="btn" href="#" aria-label="Прочети повече за дихателни цикъла">Прочети</a>
+            <img src="images/2asana.webp" alt="Асаните в йога - пътят към хармония между тяло, ум и дух" class="post-card-image asana-cover" />
+            <div class="post-card-content">
+              <span class="post-tag">Хатха Йога</span>
+              <div class="post-title">От животинския импулс до просветлението – Асаните като ключ към вътрешна еволюция</div>
+              <p class="post-excerpt">
+                Какво представляват асаните, как работят с енергийната система и защо са различни от физическите упражнения. Пътят към хармония между тяло, ум и дух.
+              </p>
+              <div class="post-meta">Време за четене: 10 мин</div>
+              <a class="btn" href="blog-asani.html" aria-label="Прочети повече за асаните">Прочети</a>
+            </div>
           </article>
           <article class="post-card">
-            <span class="post-tag">Сила и мобилност</span>
-            <div class="post-title">Мини практика за рамена и горен гръб</div>
-            <p class="post-excerpt">
-              10-минутна последователност, която противодейства на седенето и екрана: рамена, лопатки, дишане.
-            </p>
-            <div class="post-meta">Време за четене: 4 мин</div>
-            <a class="btn" href="#" aria-label="Прочети повече за мини практика за рамена">Прочети</a>
+            <img src="images/blog images/1.jpg" alt="Петте основни пътя на йога: Карма, Бхакти, Джнана, Хатха и Ащанга йога" class="post-card-image" />
+            <div class="post-card-content">
+              <span class="post-tag">Йога философия</span>
+              <div class="post-title">Петте основни пътя на йога</div>
+              <p class="post-excerpt">
+                Подробно и академично представяне на петте основни пътя на йога: Карма, Бхакти, Джнана, Хатха и Ащанга йога.
+              </p>
+              <div class="post-meta">Време за четене: 12 мин</div>
+              <a class="btn" href="blog-pette-patya-na-yoga.html" aria-label="Прочети повече за петте пътя на йога">Прочети</a>
+            </div>
           </article>
           <article class="post-card">
-            <span class="post-tag">Личен опит</span>
-            <div class="post-title">Как изглежда реалистична практика в натоварена седмица</div>
-            <p class="post-excerpt">
-              Примерен график с 2 кратки сесии и един по-дълъг блок през уикенда, плюс идеи за адаптация.
-            </p>
-            <div class="post-meta">Време за четене: 5 мин</div>
-            <a class="btn" href="#" aria-label="Прочети повече за реалистична практика">Прочети</a>
+            <img src="images/blog images/3.jpeg" alt="Йога баланс - Бхагавад Гита" class="post-card-image" />
+            <div class="post-card-content">
+              <span class="post-tag">Йога философия</span>
+              <div class="post-title">Какво всъщност е йога?</div>
+              <p class="post-excerpt">
+                Класическото ѝ значение отвъд асаните и разтягането. Йога като наука за трансформация на ума и баланс.
+              </p>
+              <div class="post-meta">Време за четене: 6 мин</div>
+              <a class="btn" href="blog-kakvo-vsushtnost-e-yoga.html" aria-label="Прочети повече за какво е йога">Прочети</a>
+            </div>
           </article>
         </div>
 
