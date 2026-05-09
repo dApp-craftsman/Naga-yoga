@@ -1,22 +1,187 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- ═══════════════════════════════════════════
+       HOME
+  ═══════════════════════════════════════════ -->
   <url>
     <loc>https://www.nagayogaclasses.com/</loc>
-    <xhtml:link rel="alternate" hreflang="bg" href="https://www.nagayogaclasses.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.nagayogaclasses.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="bg"        href="https://www.nagayogaclasses.com/"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.nagayogaclasses.com/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nagayogaclasses.com/"/>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.nagayogaclasses.com/en/</loc>
-    <xhtml:link rel="alternate" hreflang="bg" href="https://www.nagayogaclasses.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.nagayogaclasses.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="bg"        href="https://www.nagayogaclasses.com/"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.nagayogaclasses.com/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nagayogaclasses.com/"/>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://www.nagayogaclasses.com/blog.html</loc>
-  </url>
+
+  <!-- ═══════════════════════════════════════════
+       NĀGA YOGI PROGRAMME
+  ═══════════════════════════════════════════ -->
   <url>
     <loc>https://www.nagayogaclasses.com/naga-yogi.html</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.nagayogaclasses.com/naga-yogi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nagayogaclasses.com/en/naga-yogi.html"/>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.nagayogaclasses.com/en/naga-yogi.html</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.nagayogaclasses.com/naga-yogi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nagayogaclasses.com/en/naga-yogi.html"/>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ═══════════════════════════════════════════
+       BLOG INDEX
+  ═══════════════════════════════════════════ -->
+  <url>
+    <loc>https://www.nagayogaclasses.com/blog.html</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.nagayogaclasses.com/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nagayogaclasses.com/en/blog.html"/>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nagayogaclasses.com/en/blog.html</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.nagayogaclasses.com/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nagayogaclasses.com/en/blog.html"/>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ═══════════════════════════════════════════
+       BLOG ARTICLE — What Actually Is Yoga?
+  ═══════════════════════════════════════════ -->
+  <url>
+    <loc>https://www.nagayogaclasses.com/blog-kakvo-vsushtnost-e-yoga.html</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.nagayogaclasses.com/blog-kakvo-vsushtnost-e-yoga.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nagayogaclasses.com/en/blog-what-is-yoga.html"/>
+    <lastmod>2025-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nagayogaclasses.com/en/blog-what-is-yoga.html</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.nagayogaclasses.com/blog-kakvo-vsushtnost-e-yoga.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nagayogaclasses.com/en/blog-what-is-yoga.html"/>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ═══════════════════════════════════════════
+       BLOG ARTICLE — Mudras
+  ═══════════════════════════════════════════ -->
+  <url>
+    <loc>https://www.nagayogaclasses.com/blog-mudri.html</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.nagayogaclasses.com/blog-mudri.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nagayogaclasses.com/en/blog-mudras.html"/>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nagayogaclasses.com/en/blog-mudras.html</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.nagayogaclasses.com/blog-mudri.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nagayogaclasses.com/en/blog-mudras.html"/>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ═══════════════════════════════════════════
+       BLOG ARTICLE — Hatha Yoga as a Scientific System
+  ═══════════════════════════════════════════ -->
+  <url>
+    <loc>https://www.nagayogaclasses.com/blog-hatha-yoga-nauchna-sistema.html</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.nagayogaclasses.com/blog-hatha-yoga-nauchna-sistema.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nagayogaclasses.com/en/blog-hatha-yoga.html"/>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nagayogaclasses.com/en/blog-hatha-yoga.html</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.nagayogaclasses.com/blog-hatha-yoga-nauchna-sistema.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nagayogaclasses.com/en/blog-hatha-yoga.html"/>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ═══════════════════════════════════════════
+       BLOG ARTICLE — Pranayama
+  ═══════════════════════════════════════════ -->
+  <url>
+    <loc>https://www.nagayogaclasses.com/blog-pranayama.html</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.nagayogaclasses.com/blog-pranayama.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nagayogaclasses.com/en/blog-pranayama.html"/>
+    <lastmod>2025-12-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nagayogaclasses.com/en/blog-pranayama.html</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.nagayogaclasses.com/blog-pranayama.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nagayogaclasses.com/en/blog-pranayama.html"/>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ═══════════════════════════════════════════
+       BLOG ARTICLE — The Five Paths of Yoga
+  ═══════════════════════════════════════════ -->
+  <url>
+    <loc>https://www.nagayogaclasses.com/blog-pette-patya-na-yoga.html</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.nagayogaclasses.com/blog-pette-patya-na-yoga.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nagayogaclasses.com/en/blog-five-paths-of-yoga.html"/>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nagayogaclasses.com/en/blog-five-paths-of-yoga.html</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.nagayogaclasses.com/blog-pette-patya-na-yoga.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nagayogaclasses.com/en/blog-five-paths-of-yoga.html"/>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ═══════════════════════════════════════════
+       BLOG ARTICLE — Asanas
+  ═══════════════════════════════════════════ -->
+  <url>
+    <loc>https://www.nagayogaclasses.com/blog-asani.html</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.nagayogaclasses.com/blog-asani.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nagayogaclasses.com/en/blog-asanas.html"/>
+    <lastmod>2026-01-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nagayogaclasses.com/en/blog-asanas.html</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://www.nagayogaclasses.com/blog-asani.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nagayogaclasses.com/en/blog-asanas.html"/>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
