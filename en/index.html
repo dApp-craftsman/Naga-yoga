@@ -745,13 +745,18 @@
     }
     .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
   </style>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XZD6BK7GDS"></script>
+  <!-- ═══════════════════════════════════════════════════════════════
+       Google Analytics 4
+       REPLACE BOTH occurrences of G-XXXXXXXXXX below with your real
+       Measurement ID (format: G-XXXXXXXXXX).
+       Find your ID at: analytics.google.com → Admin → Data Streams
+  ═══════════════════════════════════════════════════════════════ -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XZD6BK7GDS');
+    gtag('config', 'G-XXXXXXXXXX'); /* ← REPLACE THIS TOO */
   </script>
 </head>
 <body>
@@ -1310,6 +1315,12 @@
         const email = document.getElementById("email")?.value?.trim() || "";
         const pref = document.getElementById("preference")?.value || "";
         const msg = document.getElementById("message")?.value?.trim() || "";
+
+        // GA4 event: contact form submitted
+        if (typeof gtag === "function") {
+          gtag("event", "consultation_form_submit", { preferred_contact: pref });
+        }
+
         if (pref === "instagram") {
           window.open("https://www.instagram.com/nagayoga.stoyantopalov/", "_blank", "noopener,noreferrer");
           form.reset();
@@ -1341,6 +1352,22 @@
       const toggle = document.querySelector(".nav-toggle");
       const nav = document.querySelector(".nav-links");
       if (toggle && nav) toggle.addEventListener("click", () => nav.classList.toggle("show"));
+    });
+  </script>
+  <script>
+    // GA4 event: consultation CTA button clicks
+    // Fires "consultation_cta_click" for every "Book Free Consultation" button
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll('a[href*="docs.google.com/forms"]').forEach((btn) => {
+        btn.addEventListener("click", () => {
+          if (typeof gtag === "function") {
+            gtag("event", "consultation_cta_click", {
+              button_text: btn.innerText.trim(),
+              button_location: btn.closest("section")?.id || "hero"
+            });
+          }
+        });
+      });
     });
   </script>
 
