@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NĀGA YOGA — Book a Free Consultation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Classical yoga with Stoyan Topalov. Book a free 20-min consultation, explore classes, or follow on Instagram." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/png" href="images/logo-naga-yoga.png" />
+  <!-- ═══════════════════════════════════════════════════════════════
+       Google Analytics 4  —  REPLACE G-XXXXXXXXXX with your real ID
+  ═══════════════════════════════════════════════════════════════ -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX'); /* ← REPLACE THIS TOO */
+  </script>
+  <meta property="og:image" content="https://www.nagayogaclasses.com/images/me3.jpg" />
+  <style>
+    :root {
+      --green: #0c5a34;
+      --green-dark: #17402a;
+      --gold: #c2a167;
+      --sage: #e5f0ea;
+      --bg: #faf8f4;
+      --border: #d8e5dc;
+      --text: #1d2520;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem 1.25rem 3rem;
+    }
+    .card {
+      width: 100%;
+      max-width: 380px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    /* Logo strip */
+    .logo-strip {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.75rem;
+    }
+    .logo-strip img {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+    }
+    .logo-strip span {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+
+    /* Portrait */
+    .portrait-wrap {
+      width: 108px;
+      height: 108px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--sage);
+      box-shadow: 0 0 0 3px var(--border), 0 8px 20px rgba(12, 90, 52, 0.15);
+      margin-bottom: 1.35rem;
+      flex-shrink: 0;
+    }
+    .portrait-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    /* Headline */
+    h1 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      text-align: center;
+      letter-spacing: 0.01em;
+      line-height: 1.25;
+      margin-bottom: 0.45rem;
+    }
+    .sub {
+      font-size: 0.9rem;
+      color: #5a6c63;
+      text-align: center;
+      line-height: 1.55;
+      margin-bottom: 1.9rem;
+    }
+
+    /* Buttons */
+    .links {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .link-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      padding: 1rem 1.5rem;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      text-align: center;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.15s ease;
+      cursor: pointer;
+    }
+    .link-btn:active { transform: scale(0.97); }
+
+    .btn-primary {
+      background: var(--green);
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(12, 90, 52, 0.22);
+    }
+    .btn-primary:hover {
+      background: #084326;
+      box-shadow: 0 12px 26px rgba(12, 90, 52, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--green);
+      border: 1.5px solid var(--border);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    .btn-secondary:hover {
+      border-color: #b5cdc0;
+      background: var(--sage);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.09);
+    }
+
+    .btn-instagram {
+      background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(220, 39, 67, 0.28);
+    }
+    .btn-instagram:hover {
+      box-shadow: 0 12px 26px rgba(220, 39, 67, 0.38);
+      transform: translateY(-2px);
+    }
+
+    /* Icon SVGs */
+    .btn-icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      fill: currentColor;
+    }
+
+    /* Divider */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: var(--border);
+      margin: 1.4rem 0 0.4rem;
+    }
+
+    /* Footer note */
+    .footer-note {
+      font-size: 0.78rem;
+      color: #8a9e93;
+      text-align: center;
+      margin-top: 1.5rem;
+      line-height: 1.5;
+    }
+    .footer-note a {
+      color: var(--green);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+
+    <div class="logo-strip">
+      <img src="images/logo-naga-yoga.png" alt="NĀGA YOGA" />
+      <span>NĀGA YOGA</span>
+    </div>
+
+    <div class="portrait-wrap">
+      <img src="images/me3.jpg" alt="Stoyan Topalov — classical yoga teacher" />
+    </div>
+
+    <h1>Ready to explore real yoga?</h1>
+    <p class="sub">Classical yoga as a complete science — not just postures.<br>Taught by Stoyan Topalov.</p>
+
+    <div class="links">
+
+      <a
+        href="en/index.html#consultation"
+        class="link-btn btn-primary"
+        onclick="if(typeof gtag==='function') gtag('event','consultation_cta_click',{button_location:'bio_page'})"
+      >
+        <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M17 12h-4V8h-2v4H7l5 5 5-5zm-5 9A10 10 0 1 1 12 2a10 10 0 0 1 0 20zm0-18a8 8 0 1 0 0 16A8 8 0 0 0 12 3z"/>
+        </svg>
+        Book Free Consultation
+      </a>
+
+      <a
+        href="en/index.html"
+        class="link-btn btn-secondary"
+      >
+        <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true" style="fill:var(--green)">
+          <path d="M12 3L2 12h3v9h6v-5h2v5h6v-9h3L12 3zm0 2.69L19 12v7h-4v-5H9v5H5v-7l7-6.31z"/>
+        </svg>
+        Explore My Classes
+      </a>
+
+      <a
+        href="https://www.instagram.com/nagayoga.stoyantopalov/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="link-btn btn-instagram"
+      >
+        <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4zm0 2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7zm5 3.5A4.5 4.5 0 1 1 7.5 13 4.5 4.5 0 0 1 12 8.5zm0 2A2.5 2.5 0 1 0 14.5 13 2.5 2.5 0 0 0 12 10.5zm4.75-4.4a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1z"/>
+        </svg>
+        Follow on Instagram
+      </a>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <p class="footer-note">
+      <a href="en/index.html">nagayogaclasses.com</a> &nbsp;·&nbsp; © 2025 NĀGA YOGA
+    </p>
+
+  </div>
+</body>
+</html>

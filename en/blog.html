@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Blog — Classical Yoga Insights | NĀGA YOGA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Explore in-depth articles on classical yoga — asanas, pranayama, mudras, the five paths of yoga, and the science of Hatha Yoga. Written by Stoyan Topalov, NĀGA YOGA." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.nagayogaclasses.com/en/blog.html" />
+  <link rel="alternate" hreflang="bg" href="https://www.nagayogaclasses.com/blog.html" />
+  <link rel="alternate" hreflang="en" href="https://www.nagayogaclasses.com/en/blog.html" />
+  <link rel="icon" type="image/png" href="../images/logo-naga-yoga.png" />
+  <!-- GA4 — replace G-XXXXXXXXXX with your real ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX'); /* ← REPLACE */
+  </script>
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Blog — Classical Yoga Insights | NĀGA YOGA" />
+  <meta property="og:description" content="Explore in-depth articles on classical yoga — asanas, pranayama, mudras, the five paths of yoga, and the science of Hatha Yoga." />
+  <meta property="og:image" content="https://www.nagayogaclasses.com/images/1asana.webp" />
+  <meta property="og:url" content="https://www.nagayogaclasses.com/en/blog.html" />
+  <meta property="og:site_name" content="NĀGA YOGA" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "NĀGA YOGA Blog",
+    "description": "In-depth articles on classical yoga by Stoyan Topalov",
+    "url": "https://www.nagayogaclasses.com/en/blog.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "NĀGA YOGA",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.nagayogaclasses.com/images/logo-naga-yoga.png"
+      }
+    },
+    "inLanguage": "en"
+  }
+  </script>
+  <style>
+    :root {
+      --green-main: #0c5a34;
+      --green-deep: #17402a;
+      --sage: #e5f0ea;
+      --light-bg: #faf8f4;
+      --accent-gold: #c2a167;
+      --text-main: #1d2520;
+      --border-soft: #d8e5dc;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--light-bg);
+      color: var(--text-main);
+      line-height: 1.7;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    header {
+      position: sticky; top: 0; z-index: 20;
+      background-color: rgba(250, 248, 244, 0.95);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0; }
+    .logo-wrap { display: flex; align-items: center; gap: 0.5rem; }
+    .logo-image { width: 44px; height: 44px; object-fit: contain; }
+    .logo-text { font-weight: 700; letter-spacing: 0.18em; font-size: 0.9rem; text-transform: uppercase; color: var(--green-main); }
+    .nav-links { display: flex; align-items: center; gap: 1.3rem; font-size: 0.95rem; }
+    .nav-links a { position: relative; padding-bottom: 0.2rem; }
+    .nav-links a::after {
+      content: ""; position: absolute; left: 0; bottom: 0; width: 0; height: 1px;
+      background-color: var(--accent-gold); transition: width 0.2s ease;
+    }
+    .nav-links a:hover::after { width: 100%; }
+    .lang-switch { display: inline-flex; align-items: center; padding: 2px; border-radius: 999px; background: var(--sage); border: 1px solid var(--border-soft); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.05em; }
+    .lang-switch__opt { padding: 0.2rem 0.55rem; border-radius: 999px; transition: background 0.15s; color: var(--green-main); }
+    .lang-switch__opt.is-active { background: #fff; color: var(--green-main); pointer-events: none; }
+    .lang-switch__opt:not(.is-active):hover { background: var(--border-soft); }
+    .nav-toggle { display: none; border: none; background: none; font-size: 1.6rem; cursor: pointer; color: var(--green-deep); }
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute; inset: 56px 0 auto 0; background-color: var(--light-bg);
+        border-bottom: 1px solid var(--border-soft); flex-direction: column; align-items: flex-start;
+        padding: 0.75rem 1.5rem 1.25rem; display: none;
+      }
+      .nav-links.show { display: flex; }
+      .nav-toggle { display: block; }
+    }
+    h1, h2, h3 { color: var(--green-deep); letter-spacing: 0.04em; }
+    .page-hero {
+      background: var(--green-deep);
+      color: #fff;
+      padding: 4rem 0 3rem;
+      text-align: center;
+    }
+    .page-hero h1 { color: #fff; font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 0.75rem; }
+    .page-hero p { color: rgba(255,255,255,0.8); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+    .blog-section { padding: 3.5rem 0 5rem; }
+    .section-label {
+      display: inline-block;
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--green-main);
+      background: var(--sage);
+      border: 1px solid var(--border-soft);
+      border-radius: 999px;
+      padding: 0.3rem 0.9rem;
+      margin-bottom: 2rem;
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    @media (max-width: 900px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 580px) { .blog-grid { grid-template-columns: 1fr; } }
+    .blog-card {
+      background: #fff;
+      border: 1px solid var(--border-soft);
+      border-radius: 1rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(12, 90, 52, 0.12);
+    }
+    .blog-card__img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .blog-card__body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .blog-card__tag {
+      display: inline-block;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--green-main);
+      background: var(--sage);
+      border: 1px solid var(--border-soft);
+      border-radius: 999px;
+      padding: 0.2rem 0.65rem;
+      margin-bottom: 0.85rem;
+    }
+    .blog-card__title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--green-deep);
+      line-height: 1.35;
+      margin-bottom: 0.75rem;
+    }
+    .blog-card__excerpt {
+      font-size: 0.93rem;
+      color: #5a6c63;
+      line-height: 1.6;
+      flex: 1;
+      margin-bottom: 1.25rem;
+    }
+    .blog-card__meta {
+      font-size: 0.8rem;
+      color: #8a9e93;
+      margin-bottom: 1rem;
+    }
+    .blog-card__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--green-main);
+      margin-top: auto;
+    }
+    .blog-card__link:hover { text-decoration: underline; }
+    .cta-banner {
+      background: var(--green-deep);
+      color: #fff;
+      padding: 3.5rem 1.5rem;
+      text-align: center;
+      border-radius: 1.25rem;
+      margin: 2rem 0 0;
+    }
+    .cta-banner h2 { color: #fff; font-size: 1.8rem; margin-bottom: 0.75rem; }
+    .cta-banner p { color: rgba(255,255,255,0.8); margin-bottom: 2rem; font-size: 1.05rem; }
+    .btn-cta {
+      display: inline-block;
+      background: var(--accent-gold);
+      color: var(--green-deep);
+      font-weight: 700;
+      padding: 0.9rem 2rem;
+      border-radius: 999px;
+      font-size: 1rem;
+      transition: background 0.15s, transform 0.12s;
+    }
+    .btn-cta:hover { background: #d4b07a; transform: translateY(-2px); }
+    footer {
+      border-top: 1px solid var(--border-soft);
+      padding: 2rem 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #8a9e93;
+    }
+    footer a { color: var(--green-main); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="logo-wrap">
+          <img src="../images/logo-naga-yoga.png" alt="NĀGA YOGA" class="logo-image" />
+          <span class="logo-text">NĀGA YOGA</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle menu" onclick="this.nextElementSibling.classList.toggle('show')">☰</button>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="naga-yogi.html">Nāga Yogi</a>
+          <a href="blog.html">Blog</a>
+          <a href="index.html#consultation">Book Free Call</a>
+          <div class="lang-switch">
+            <a href="../blog.html" class="lang-switch__opt" hreflang="bg" lang="bg">BG</a>
+            <span class="lang-switch__opt is-active">EN</span>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Classical Yoga Blog</h1>
+      <p>In-depth articles on the science, philosophy, and practice of classical yoga — by Stoyan Topalov</p>
+    </div>
+  </section>
+
+  <main class="blog-section">
+    <div class="container">
+      <div class="section-label">All Articles</div>
+      <div class="blog-grid">
+
+        <a href="blog-what-is-yoga.html" class="blog-card">
+          <img src="../images/blog images/1.avif" alt="What actually is yoga?" class="blog-card__img" loading="lazy" />
+          <div class="blog-card__body">
+            <span class="blog-card__tag">Yoga Philosophy</span>
+            <div class="blog-card__title">What Actually Is Yoga?</div>
+            <div class="blog-card__excerpt">Yoga is not a set of exercises. It is a complete science of the human being — a system that was developed over thousands of years to guide practitioners toward the highest states of consciousness.</div>
+            <div class="blog-card__meta">6 min read</div>
+            <span class="blog-card__link">Read article →</span>
+          </div>
+        </a>
+
+        <a href="blog-mudras.html" class="blog-card">
+          <img src="../images/mudra0.jpg" alt="Mudras in yoga" class="blog-card__img" loading="lazy" />
+          <div class="blog-card__body">
+            <span class="blog-card__tag">Hatha Yoga</span>
+            <div class="blog-card__title">Mudras: The Gestures of Inner Power</div>
+            <div class="blog-card__excerpt">Mudras are specific hand and body gestures that redirect prana in the energy body. Far more than symbolic poses — they are precise tools for working with your nervous system and consciousness.</div>
+            <div class="blog-card__meta">10 min read</div>
+            <span class="blog-card__link">Read article →</span>
+          </div>
+        </a>
+
+        <a href="blog-hatha-yoga.html" class="blog-card">
+          <img src="../images/h1.jpg" alt="Hatha Yoga as a scientific system" class="blog-card__img" loading="lazy" />
+          <div class="blog-card__body">
+            <span class="blog-card__tag">Hatha Yoga</span>
+            <div class="blog-card__title">Hatha Yoga as a Scientific System</div>
+            <div class="blog-card__excerpt">Hatha Yoga is not a fitness class. It is a precise scientific system for purifying the nadis, awakening prana, and preparing body and mind for higher states of meditation.</div>
+            <div class="blog-card__meta">8 min read</div>
+            <span class="blog-card__link">Read article →</span>
+          </div>
+        </a>
+
+        <a href="blog-pranayama.html" class="blog-card">
+          <img src="../images/pranayama1.jpg" alt="Pranayama — the bridge to the unknown" class="blog-card__img" loading="lazy" />
+          <div class="blog-card__body">
+            <span class="blog-card__tag">Pranayama</span>
+            <div class="blog-card__title">Pranayama — The Bridge to the Unknown</div>
+            <div class="blog-card__excerpt">Pranayama is not simply breathing exercises. It is the conscious management of the vital life force that animates every cell — a direct bridge between the physical and the subtle dimensions.</div>
+            <div class="blog-card__meta">10 min read</div>
+            <span class="blog-card__link">Read article →</span>
+          </div>
+        </a>
+
+        <a href="blog-five-paths-of-yoga.html" class="blog-card">
+          <img src="../images/blog images/1.jpg" alt="The five paths of yoga" class="blog-card__img" loading="lazy" />
+          <div class="blog-card__body">
+            <span class="blog-card__tag">Yoga Philosophy</span>
+            <div class="blog-card__title">The Five Paths of Yoga</div>
+            <div class="blog-card__excerpt">Yoga is not a single practice — it is an entire civilisation of inner development. Karma, Jnana, Bhakti, Raja, and Hatha Yoga each offer a distinct and complete path toward liberation.</div>
+            <div class="blog-card__meta">12 min read</div>
+            <span class="blog-card__link">Read article →</span>
+          </div>
+        </a>
+
+        <a href="blog-asanas.html" class="blog-card">
+          <img src="../images/1asana.webp" alt="Yoga asanas — key to inner evolution" class="blog-card__img" loading="lazy" />
+          <div class="blog-card__body">
+            <span class="blog-card__tag">Hatha Yoga</span>
+            <div class="blog-card__title">From Instinct to Enlightenment — Asanas as the Key to Inner Evolution</div>
+            <div class="blog-card__excerpt">What are yoga asanas really? How they work with your energy system, chakras, and Kundalini — and why they are fundamentally different from physical exercise.</div>
+            <div class="blog-card__meta">10 min read</div>
+            <span class="blog-card__link">Read article →</span>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="cta-banner">
+        <h2>Ready to experience classical yoga?</h2>
+        <p>Book a free 20-minute consultation with Stoyan and discover which practice is right for you.</p>
+        <a
+          href="index.html#consultation"
+          class="btn-cta"
+          onclick="if(typeof gtag==='function') gtag('event','consultation_cta_click',{button_location:'blog_index'})"
+        >Book Your Free Consultation</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 NĀGA YOGA · <a href="index.html">nagayogaclasses.com</a> · Taught by Stoyan Topalov</p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href*="docs.google.com/forms"]').forEach((btn) => {
+      btn.addEventListener("click", () => {
+        if (typeof gtag === "function") {
+          gtag("event", "consultation_cta_click", {
+            button_text: btn.innerText.trim(),
+            button_location: btn.closest("section")?.id || "blog_index"
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

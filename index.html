@@ -1153,6 +1153,11 @@
         const pref = document.getElementById("preference")?.value || "";
         const msg = document.getElementById("message")?.value?.trim() || "";
 
+        // GA4 event: contact form submitted
+        if (typeof gtag === "function") {
+          gtag("event", "consultation_form_submit", { preferred_contact: pref });
+        }
+
         if (pref === "instagram") {
           // Отваря Instagram профила в нов таб
           window.open("https://www.instagram.com/nagayoga.stoyantopalov/", "_blank", "noopener,noreferrer");
@@ -1207,6 +1212,30 @@
         heroCard.classList.add("scale-in");
         heroCard.style.animationDelay = "0.15s";
       }
+    });
+  </script>
+  <script>
+    // GA4 event: consultation CTA clicks
+    document.addEventListener("DOMContentLoaded", () => {
+      // "Запази безплатна 1:1 консултация" hero button → #consultation anchor
+      document.querySelectorAll('a[href="#consultation"]').forEach((btn) => {
+        btn.addEventListener("click", () => {
+          if (typeof gtag === "function") {
+            gtag("event", "consultation_cta_click", { button_location: "hero" });
+          }
+        });
+      });
+
+      // "Отвори формуляра" button → Google Forms external link
+      document.querySelectorAll('a[href*="docs.google.com/forms"]').forEach((btn) => {
+        btn.addEventListener("click", () => {
+          if (typeof gtag === "function") {
+            gtag("event", "consultation_cta_click", {
+              button_location: btn.closest("section")?.id || "consultation"
+            });
+          }
+        });
+      });
     });
   </script>
 </body>
